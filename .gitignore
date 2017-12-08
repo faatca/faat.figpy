@@ -1,0 +1,7 @@
+venv
+dist
+*.egg-info
+.hgignore
+.hg
+env
+__pycache__
