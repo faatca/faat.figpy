@@ -35,3 +35,16 @@ settings = faat.figpy.load("/path/to/app.conf", requires=["USERNAME", "DOMAIN"])
 print(settings.USERNAME)
 print(settings["DOMAIN"])
 ```
+
+If using `argparse`, the configuration can be loaded directly.
+
+```python
+import argparse
+import faat.figpy
+
+parser = argparse.ArgumentParser(description="Does something cool")
+parser.add_argument("config", type=faat.figpy.config_arg)
+args = parser.parse_args()
+
+print(args.config.API_URL)
+```
