@@ -59,7 +59,7 @@ def load_py(filename):
     d = imp.new_module('config')
     d.__file__ = filename
     try:
-        with open(filename) as f:
+        with open(filename, encoding="utf-8") as f:
             code = compile(f.read(), filename, 'exec')
         exec(code, d.__dict__)
     except Exception as e:
