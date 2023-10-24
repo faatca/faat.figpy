@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "faat.figpy"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "BSD 3-Clause License"}
+dependencies = []
+dynamic = ["version"]
+
+[tool.setuptools]
+zip-safe = true
+
+[tool.setuptools.dynamic]
+version = {attr = "faat.figpy.__version__"}

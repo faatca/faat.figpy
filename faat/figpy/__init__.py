@@ -5,9 +5,10 @@ in UPPER_CASE are loaded from the configuration file. This way, your
 configuration can calculate values dynamically, if you so desire.
 """
 
-__version__ = '1.0.1'
+__version__ = '1.0.2'
 
-import imp
+import types
+import importlib
 import os
 import argparse
 
@@ -56,7 +57,7 @@ def load(path, defaults=None, requires=None):
 
 
 def load_py(filename):
-    d = imp.new_module('config')
+    d = types.ModuleType('config')
     d.__file__ = filename
     try:
         with open(filename, encoding="utf-8") as f:
